@@ -14,8 +14,22 @@ class EditNoteView extends StatelessWidget {
         backgroundColor: Colors.transparent,
       ),
       body: const Padding(
-        padding:  EdgeInsets.symmetric(vertical: 20,horizontal: 15),
-        child:  CustomTextFileds(),
+        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 15),
+        child: Column(
+          children: [
+            CustomTextFiled(
+              hint: 'Title',
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            CustomTextFiled(
+              hint: 'Content',
+              contentPadding:
+                  EdgeInsets.symmetric(vertical: 80, horizontal: 20),
+            ),
+          ],
+        ),
       ),
     );
   }
