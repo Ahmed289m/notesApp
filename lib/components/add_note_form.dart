@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:notesapp/components/Custom_Text_Fields.dart';
+import 'package:notesapp/components/color_list.dart';
 import 'package:notesapp/cubits/add_note_cubit/add_note_cubit_cubit.dart';
 import 'package:notesapp/cubits/notes_cubit/notes_cubit_cubit.dart';
 import 'package:notesapp/models/note_model.dart';
@@ -48,6 +49,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
             contentPadding:
                 const EdgeInsets.symmetric(vertical: 80, horizontal: 20),
           ),
+          const ColorItemList(),
           SizedBox(
               width: double.infinity,
               child: BlocBuilder<AddNoteCubitCubit, AddNoteCubitState>(
@@ -100,3 +102,6 @@ class _AddNoteFormState extends State<AddNoteForm> {
     );
   }
 }
+
+
+
