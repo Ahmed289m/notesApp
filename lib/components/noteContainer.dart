@@ -45,6 +45,7 @@ class NoteCont extends StatelessWidget {
                 ),
                 trailing: GestureDetector(
                   onTap: () {
+                    
                     note.delete();
                     BlocProvider.of<NotesCubitCubit>(context).getNotes();
                   },
