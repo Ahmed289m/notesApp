@@ -7,14 +7,10 @@ part 'notes_cubit_state.dart';
 
 class NotesCubitCubit extends Cubit<NotesCubitState> {
   NotesCubitCubit() : super(NotesStateInitial());
-
-  getNotes(){
-    try {
-      var notes = Hive.box<NoteModel>('notes');
-      List<NoteModel>notesList =notes.values.toList(); 
-      emit(NotesStateSuccess(notes: notesList));
-    } catch (e) {
-      emit(NotesStateFailure(e.toString()));
-    }
+  List<NoteModel>? notesList;
+  getNotes() {
+    var notes = Hive.box<NoteModel>('notes');
+    notesList = notes.values.toList();
+    emit(NotesStateSuccess());
   }
 }

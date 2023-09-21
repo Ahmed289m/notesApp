@@ -3,13 +3,15 @@ import 'package:notesapp/constants.dart';
 
 class CustomTextFiled extends StatelessWidget {
   const CustomTextFiled(
-      {super.key, this.onSaved, this.contentPadding, required this.hint});
+      {super.key, this.onSaved, this.contentPadding, required this.hint, this.onChange});
   final void Function(String?)? onSaved;
   final EdgeInsetsGeometry? contentPadding;
   final String hint;
+  final void Function(String)?onChange;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: onChange,
       onTapOutside: (event) {
         FocusManager.instance.primaryFocus?.unfocus();
       },
